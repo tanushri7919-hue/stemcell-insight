@@ -325,7 +325,7 @@ def _render_candidate_fate_card(outcome: dict, source_cell_id: str, selected_sig
             signals=outcome["req_signals"] + outcome["opt_signals"],
             markers=get_markers_for_cell(source_cell_id)
         )
-        st.plotly_chart(fig_p, use_container_width=True)
+       st.plotly_chart(fig_p, use_container_width=True, key=f"pathway_chart_{source_cell_id}_{t_cell}_{outcome.get('diff_record', {}).get('differentiation_id', '')}")
 
     # Reference citation
     if diff.get("ref_title"):
